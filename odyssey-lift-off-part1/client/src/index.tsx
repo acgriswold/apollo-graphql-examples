@@ -6,9 +6,8 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import GlobalStyles from './styles';
 import Pages from './pages';
 
-
 const client = new ApolloClient({
-  uri: process.env.APOLLO_SERVER_URI,
+  uri: import.meta.env.VITE_APOLLO_SERVER_URI,
   cache: new InMemoryCache(),
 })
 

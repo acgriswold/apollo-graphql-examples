@@ -1,9 +1,8 @@
-declare global {
-    namespace NodeJS {
-        interface ProcessEnv {
-            APOLLO_SERVER_URI: string;
-        }
-    }
+/// <reference types="vite/client" />
+interface ImportMetaEnv {
+    VITE_APOLLO_SERVER_URI: string;
 }
 
-export {}
+interface ImportMeta {
+    readonly env: ImportMetaEnv
+}

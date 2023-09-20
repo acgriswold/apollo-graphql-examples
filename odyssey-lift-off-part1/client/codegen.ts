@@ -1,9 +1,10 @@
 import { type CodegenConfig } from '@graphql-codegen/cli';
+import { loadEnv } from 'vite'
 
-require('dotenv').config()
+const env = loadEnv('', process.cwd(), '')
 
 const config: CodegenConfig = {
-    schema: process.env.APOLLO_SERVER_URI,
+    schema: env.VITE_APOLLO_SERVER_URI,
     documents: ['src/**/*.tsx'],
     generates: {
         "./src/__generated__/": {

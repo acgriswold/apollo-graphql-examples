@@ -3,12 +3,8 @@ import ReactDOM from 'react-dom';
 
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
-import { config } from 'dotenv'
-
 import GlobalStyles from './styles';
 import Pages from './pages';
-
-config();
 
 
 const client = new ApolloClient({

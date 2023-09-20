@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist/src",
+    "rootDir": ".",
+    "outDir": "dist/",
     "target": "es2020",
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -21,9 +21,11 @@
     "module": "esnext",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "types": ["node"]
   },
   "include": [
-    "src"
+    "src",
+    "./codegen.ts"
   ]
 }

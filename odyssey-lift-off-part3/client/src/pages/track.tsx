@@ -2,16 +2,28 @@ import React from "react";
 import { Layout } from "../components";
 import QueryResult from "../components/query-result";
 import { gql } from "../__generated__";
-import TrackCard from "../containers/track-card";
+
+import TrackDetail from "../components/track-detail";
 
 import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 
 
 const Track = () => {
     const { trackId = "" } = useParams();
+    const { loading, error, data } = useQuery(GET_TRACK, {
+        variables: {
+            trackId
+        }
+    });
+
 
     return (
-        <Layout></Layout>
+        <Layout>
+            <QueryResult error={error} loading={loading} data={data}>
+                <TrackDetail track={data?.track} />
+            </QueryResult>
+        </Layout>
     );
 };
 
